@@ -2,7 +2,9 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-
+  ssr: false,
+  plugins: ['./plugins/vuetify.ts'],
+  css: ['vuetify/styles'],
   modules: [
     '@nuxt/eslint',
     '@nuxt/fonts',
@@ -10,5 +12,9 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/test-utils'
-  ]
+  ],
+  components: true,
+  build: {
+    transpile: ['vuetify'],
+  },
 })
